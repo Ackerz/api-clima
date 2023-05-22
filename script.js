@@ -8,7 +8,6 @@ searchBtn.addEventListener("click", () => {
     fetch(finalURL)
     .then((response) => response.json())
     .then((data) => {
-        console.log(data)
         result.innerHTML = `<img src="${data[0].flags.svg}"
         class="flag-img">
         <h2>${data[0].name.common}</h2>
