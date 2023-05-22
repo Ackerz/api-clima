@@ -29,7 +29,7 @@ searchBtn.addEventListener("click", () => {
     <div class="wrapper">
         <div class="data-wrapper">
             <h4>População:</h4>
-            <span>${data[0].population[0]}</span>
+            <span>${data[0].population}</span>
         </div>
     </div>
 
@@ -43,6 +43,20 @@ searchBtn.addEventListener("click", () => {
         </div>
     </div>
 
-        `
-    });
-})
+    <div class="wrapper">
+        <div class="data-wrapper">
+            <h4>Língua comum:</h4>
+            <span>${Object.values(data[0].languages)
+                .toString()
+                .split(",")
+                .join(", ")}  
+            </span>
+        </div>
+    </div>`
+    }).catch(() =>{
+            if(countryName.length == 0){
+                result.innerHTML=`<h3>O campo de pesquisa não pode estar vazio</h3>`
+            }
+        }
+    )
+});
